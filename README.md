@@ -1,190 +1,606 @@
+<div align=”center”>
 
-# Module 3 Final Project
+# MODULE 3 - PROJECT 
 
+# Expanding Machine Learning into Formation Evaluation
+
+</div>
 
 ## Introduction
 
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 3.
-
-
-## Objectives
-
-- Understand all required aspects of the Final Project for Module 3
-- Understand all required deliverables
-- Understand what constitutes a successful project
-
-## Final Project Summary
-
-Congratulations! You've made it through another _intense_ module, and now you're ready to show off your newfound Machine Learning skills!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project-v2-1/master/smart.gif)
-
-All that remains for Module 3 is to complete the final project!
-
-## The Project
-
-The main goal of this project is to create a classification model. For this project you have the choice to either:
-
-- choose a data set from a curated list
-- choose your own data set _outside_ of the curated list. 
-
-The data guidelines for either option are shown below
-
-For this project, you're going to select a dataset of your choosing and create a classification model. You'll start by identifying a problem you can solve with classification, and then identify a dataset. You'll then use everything you've learned about Data Science and Machine Learning thus far to source a dataset, preprocess and explore it, and then build and interpret a classification model that answers your chosen question.
-
-### a. Choosing the data from a curated list
-
-You are allowed to select one of the four data sets described below. Each comes with its own advantages and disadvantages, and, of course, its own associated business problem and stakeholders. It may be desirable to flesh out your understanding of the audience or the business proposition a little more than sketched out here. If you select one of these four data sets, you **need no further approval from your instructor**.
-
-
-1) [Chicago Car Crash Data](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if). Note this links also to [Vehicle Data](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Vehicles/68nd-jvt3) and to [Driver/Passenger Data](https://data.cityofchicago.org/Transportation/Traffic-Crashes-People/u6pd-qa9d).
-
-Build a classifier to predict the primary contributory cause of a car accident, given information about the car, the people in the car, the road conditions etc. You might imagine your audience as a Vehicle Safety Board who's interested in reducing traffic accidents, or as the City of Chicago who's interested in becoming aware of any interesting patterns. Note that there is a **multi-class** classification problem. You will almost certainly want to bin or trim or otherwise limit the number of target categories on which you ultimately predict. Note e.g. that some primary contributory causes have very few samples.
-
-2) [Terry Stops Data](https://catalog.data.gov/dataset/terry-stops).
-In [*Terry v. Ohio*](https://www.oyez.org/cases/1967/67), a landmark Supreme Court case in 1967-8, the court found that a police officer was not in violation of the "unreasonable search and seizure" clause of the Fourth Amendment, even though he stopped and frisked a couple of suspects only because their behavior was suspicious. Thus was born the notion of "reasonable suspicion", according to which an agent of the police may e.g. temporarily detain a person, even in the absence of clearer evidence that would be required for full-blown arrests etc. Terry Stops are stops made of suspicious drivers.
-
-Build a classifier to predict whether an arrest was made after a Terry Stop, given information about the presence of weapons, the time of day of the call, etc. Note that this is a **binary** classification problem.
-
-Note that this dataset also includes information about gender and race. You **may** use this data as well. You may, e.g. pitch your project as an inquiry into whether race (of officer or of subject) plays a role in whether or not an arrest is made.
-
-If you **do** elect to make use of race or gender data, be aware that this can make your project a highly sensitive one; your discretion will be important, as well as your transparency about how you use the data and the ethical issues surrounding it.
-
-3) [Customer Churn Data](https://www.kaggle.com/becksddf/churn-in-telecoms-dataset)
-
-Build a classifier to predict whether a customer will ("soon") stop doing business with SyriaTel, a telecommunications company. Note that this is a **binary** classification problem.
-
-Most naturally, your audience here would be the telecom business itself, interested in losing money on customers who don't stick around very long. Are there any predictable patterns here?
-
-4) [Tanzanian Water Well Data](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/) (*active competition*!)
-Tanzania, as a developing country, struggles with providing clean water to its population of over 57,000,000. There are many waterpoints already established in the country, but some are in need of repair while others have failed altogether.
-
-Build a classifier to predict the condition of a water well, using information about the sort of pump, when it was installed, etc. Note that this is a **ternary** classification problem.
-
-
-### b. Selecting a Data Set _Outside_ of the Curated List
-
-We encourage you to be very thoughtful when identifying your problem and selecting your data set--an overscoped project goal or a poor data set can quickly bring an otherwise promising project to a grinding halt. **If you are going to choose your own data set, you'll need to run it by your instructor for approval**.
-
-To help you select an appropriate data set for this project, we've set some guidelines:
-
-1. Your dataset should work for classification. The classification task can be either binary or multiclass, as long as it's a classification model.   
-
-2. Your dataset needs to be of sufficient complexity. Try to avoid picking an overly simple dataset. Try to avoid extremely small datasets, as well as the most common datasets like titanic, iris, MNIST, etc. We want to see all the steps of the Data Science Process in this project--it's okay if the dataset is mostly clean, but we expect to see some preprocessing and exploration. See the following section, **_Data Set Constraints_**, for more information on this.   
-
-3. On the other end of the spectrum, don't pick a problem that's too complex, either. Stick to problems that you have a clear idea of how you can use machine learning to solve it. For now, we recommend you stay away from overly complex problems in the domains of Natural Language Processing or Computer Vision--although those domains make use of Supervised Learning, they come with a lot of other special requirements and techniques that you don't know yet (but you'll learn soon!). If you're chosen problem feels like you've overscoped, then it probably is. If you aren't sure if your problem scope is appropriate, double check with your instructor!  
-
-#### Data Set Constraints
-
-When selecting a data set, be sure to take into consideration the following constraints:
-
-1. Your data set can't be one we've already worked with in any labs.
-2. Your data set should contain a minimum of 1000 rows.    
-3. Your data set should contain a minimum of 10 predictor columns, before any one-hot encoding is performed.   
-4. Your instructor must provide final approval on your data set.
-
-#### Problem First, or Data First?
-
-There are two ways that you can about getting started: **_Problem-First_** or **_Data-First_**.
-
-**_Problem-First_**: Start with a problem that you want to solve with classification, and then try to find the data you need to solve it.  If you can't find any data to solve your problem, then you should pick another problem.
-
-**_Data-First_**: Take a look at some of the most popular internet repositories of cool data sets we've listed below. If you find a data set that's particularly interesting for you, then it's totally okay to build your problem around that data set.
-
-There are plenty of amazing places that you can get your data from. We recommend you start looking at data sets in some of these resources first:
-
-* [UCI Machine Learning Datasets Repository](https://archive.ics.uci.edu/ml/datasets.html)
-* [Kaggle Datasets](https://www.kaggle.com/datasets)
-* [Awesome Datasets Repo on Github](https://github.com/awesomedata/awesome-public-datasets)
-* [New York City Open Data Portal](https://opendata.cityofnewyork.us/)
-* [Inside AirBNB ](http://insideairbnb.com/)
-
-
-## The Deliverables
-
-For online students, your completed project should contain the following four deliverables:
-
-1. A **_Jupyter Notebook_** containing any code you've written for this project. This work will need to be pushed to a public GitHub repository dedicated for this project.
-
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository. 
-
-3. A **_[Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)_**.
-
-4. An **_"Executive Summary" PowerPoint Presentation_** that gives a brief overview of your problem/dataset, and each step of the OSEMN process.
-
-Note: On-campus students may have different deliverables, please speak with your instructor.
-
-### Jupyter Notebook Must-Haves
-
-For this project, your Jupyter Notebook should meet the following specifications:
-
-**_Organization/Code Cleanliness_**
-
-* The notebook should be well organized, easy to follow, and code is commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.  
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.  
-
-**_Process, Methodology, and Findings_**
-
-* Your notebook should contain a clear record of your process and methodology for exploring and preprocessing your data, building and tuning a model, and interpreting your results.
-* We recommend you use the OSEMN process to help organize your thoughts and stay on track.
-
-### Blog Post Must-Haves
-
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
-
-## The Process
-
-These steps are informed by Smart Vision's<sup>1</sup> description of the CRISP-DM process.
-
-### 1. Business Understanding
-
-Start by reading this document, and making sure that you understand the kinds of questions being asked.  In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than addressing all of the "many people" mentioned in the background section.  Do you want to emphasize affordability, investment, or something else?  This framing will help you choose which stakeholder claims to address.
-
-Three things to be sure you establish during this phase are:
-
-1. **Objectives:** what questions are you trying to answer, and for whom?
-2. **Project plan:** you may want to establish more formal project management practices, such as daily stand-ups or using a Trello board, to plan the time you have remaining.  Regardless you should determine the division of labor, communication expectations, and timeline.
-3. **Success criteria:** what does a successful project look like?  How will you know when you have achieved it?
-
-### 2. Data Understanding
-
-Write a script to download the data (or instructions for future users on how to manually download it), and explore it.  Do you understand what the columns mean?  How do the three data tables relate to each other?  How will you select the subset of relevant data?  What kind of data cleaning is required?
-
-It may be useful to generate visualizations of the data during this phase.
-
-### 3. Data Preparation
-
-Through SQL and Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for analysis in a linear regression model, including any merging of tables.  Be sure to document any data that you choose to drop or otherwise exclude.  This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into a classification model.
-
-### 4. Modeling
-
-The focus this time is on prediction. Good prediction is a matter of the model generalizing well. Steps we can take to assure good generalization include: testing the model on unseen data, cross-validation, and regularization. What sort of model should you build? A diverse portfolio is probably best. Classification models we've looked at so far include logistic regression, decision trees, bagging, and boosting, each of these with different flavors. You are encouraged to try any or all of these.
-
-### 5. Evaluation
-
-Recall that there are many different metrics we might use for evaluating a classification model. Accuracy is intuitive, but can be misleading, especially if you have class imbalances in your target. Perhaps, depending on you're defining things, it is more important to minimize false positives, or false negatives. It might therefore be more appropriate to focus on precision or recall. You might also calculate the AUC-ROC to measure your model's *discrimination*.
-
-### 6. Deployment
-
-In this case, your "deployment" comes in the form of the deliverables listed above. Make sure you can answer the following questions about your process:
-
- - "How did you pick the question(s) that you did?"
- - "Why are these questions important from a business perspective?"
- - "How did you decide on the data cleaning options you performed?"
- - "Why did you choose a given method or library?"
- - "Why did you select those visualizations and what did you learn from each of them?"
- - "Why did you pick those features as predictors?"
- - "How would you interpret the results?"
- - "How confident are you in the predictive quality of the results?"
- - "What are some of the things that could cause the results to be wrong?"
-
-
-## Grading Rubric 
-
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-3-project-v2-1/blob/master/module_3_project_rubric.pdf). _Note: On-campus students may have different requirements, please speak with your instructor._ 
-
-
-## Citation
-
-1. "What is the CRISP-DM Methodology?" Smart Vision Europe. Available at: https://www.sv-europe.com/crisp-dm-methodology/
+Formation Evaluation has played an important role in many industries including but not limited to oil & gas, geothermal, and mining. These industries for long have utilized large and complex data to analyze and make their predictions. This analysis is especially important in the exploration stage of most processes. Till now, certain tools and techniques have been used across various industries to deal with big data. However these processes are cumbersome and is difficult to achieve utmost accuracy while also speeding up the process. 
+> This is where the demand of data science rises in hopes of developing a tool/model that can accurately fill in the gaps.
+
+One aspect of Formation evaluation is determining the facies of a certain rock formation based on the log readings measured during the exploration process. Facies determine the properties of that formation, the result of which is important to determine the presence of oil/gas/water, geothermal properties, etc. The most common logs used for facies determination are Gamma Ray, Resistivity, Neutron Density, and photoelectric.
+>Different facies show different values for each log measurement.
+
+Thus, analyzing the combined values will help classify each data point at a given depth and thus determine the facies at that depth.
+>The final model from this project will help accurately classify each point at a given depth into different facies that would further help to separate the formation into layers and aid the exploration process.
+
+
+## The Data
+
+Our data consist of information gathered from 8 different wells and 3232 data points. We have 11 coulumns including the target variable.
+
+The target variable has 9 classes numbered 1-9, each denoting a facies. These are described as below:
+
+>**1** : Non-Marine Sandstone <br /> 
+**2**: Non-Marine Coarse Siltstone <br />
+**3**: Non-Marine Fine Siltstone <br />
+**4**: Marine siltstone and shale <br />
+**5**: Mudstone (Limestone) <br />
+**6**: Wackestone (Limestone) <br />
+**7**: Dolomite <br />
+**8**: Packstone - Grainstone (Limestone) <br />
+**9**: Phylloid-algal bafflestone (Limestone) <br />
+
+The predictors used are the log reading acquired during logging operations. 
+>The logs included in this data are: <br />
+- Gamma Ray (GR)
+- Resistivity (ILD_log10)
+- Photoelectric Effect (PE)
+- Neutron-Density Porosity Difference (DeltaPHI)
+- Neutron-Density Porosity (PHID) <br />
+
+Other Predictors include Depth, Nonmarine-Marine Indicator (NM_M), and relative position.
+
+Formation and well names have also been included for the knowledge of geographical location. This will ensure the extension of this project to other geographical locations.
+
+
+## Methodology
+
+Most of the data that we get from the field require cleaning, processing and noise elimination. This Project utilizes scikit learn's preprocessing classes to accomplish this. The data is split into training and testing set to be able to test the final model. The training data is further divided into training and validation to test each model and leave the test data un-biased.
+
+Once this is accomplished, the data is fit through five differnt models and compared on the basis of f1 score. The errors for each class and the macro-averaged f1-score is analysed to select the final model.
+
+Lastly, feature analyses is performed based on the feature ranking, importances and weights.
+
+The libraries used in this project include scikit learn, pandas, numpy, yellowbrick, eli5, matplotlib, seaborn, ipywidgets
+
+
+
+## Functions Used to Build this Project
+
+1. Column Exploration
+
+```
+def column_type_exploration(df, column):
+    
+    '''For a given column in the given dataframe, displays an output of number of unique values and
+    statistical summary for number type
+    -----------------------------------------------
+    Input:
+    df (DataFrame): DataFrame for the column to evaluate
+    column (str): column name
+    -----------------------------------------------
+    Output:
+    statistical summary of the numerical column
+    unique value counts'''
+    
+    if df[column].dtype=='int64' or df[column].dtype=='float64':
+        display(df[column].describe())
+    
+    print('\n')
+    print(f'Number of Unique Values: {len(df[column].unique())}')
+    print('\n')
+    print(f'Example Unique Values: {df[column].unique()[:5]}')
+```
+
+2. Preprocessing
+
+```
+def preprocessing_trial(num_cols, cat_cols,
+                  cat_imputer=KNNImputer(weights='distance'), 
+                  encoder=OneHotEncoder(sparse=False, drop='first',handle_unknown='error'), 
+                  num_imputer=KNNImputer(weights='distance'), 
+                  transformation=PowerTransformer()):
+    
+    '''Builds a preprocessing pipeline and column transformation to data containing numerical and/or categorical data 
+    based on the chosen classes/preprocessing methods
+    --------------------------------
+    Inputs:
+    
+    cat_imputer (class): Imputer class for categorical data. Default - KNNImputer() with weights as distance
+    encoder (class): encoding class for categorical data. Default - OneHotEncoder() ignoring the unknowns and dropping first
+    num_imputer (class): Imputer class for numerical data. Default - KNNImputer() with weights as distance
+    transformation (class): linear scaling or non-linear transformation class. Default - PowerTransformer()
+    num_cols (list): numerical columns
+    cat_cols (list): categorical columns
+    --------------------------------
+    Output:
+    
+    ColumnTransformer pipeline to preprocess a given data
+    --------------------------------'''
+    
+    cat_transformer = Pipeline(steps=[('ohe', encoder),
+                                      ('impute', cat_imputer)])
+    
+    num_transformer = Pipeline(steps=[('impute', num_imputer),
+                                  ('scaler', transformation)])
+    
+    preprocessing = ColumnTransformer(transformers=[('num', num_transformer,num_cols),
+                                                ('cat', cat_transformer,cat_cols)])
+    return preprocessing
+```
+
+3. modeling pipeline
+
+```
+def model_pipeline(model,preprocessor):
+    
+    '''Returns a model object for a given estimator and preprocessor
+    ------------------------------------------
+    Inputs:
+    
+    model (sklearn classifier class)
+    preprocessor (pipeline or class): sklearn preprocessing class or pipeline
+    ------------------------------------------
+    
+    Outputs:
+    
+    sklearn modelling pipeline
+    -------------------------------------------'''
+    
+    model = Pipeline(steps = [('preprocessor', preprocessor),
+                              ('model', model)])
+    return model
+```
+
+4. Model Evaluation
+
+```
+def model_evaluation(model,X,y,cm_normalize = 'true', cm_cmap = 'BuGn_r' ):
+    '''Displays classification matrix and visual evaluation (confusion matrix) for a given scikit learn model
+    for test data
+    ------------------------------
+    Inputs:
+    
+    model (sklearn model)
+    X (DataFrame, series or array): test data for features
+    y (series or array): dependent variable
+    ------------------------------
+    
+    Outputs:
+    
+    sklearn confusion matrix (DataFrame)
+    sklearn confusion matrix plot
+    ------------------------------'''
+    
+    print('\n')
+    print(formating.bold + formating.underline+ formating.blue + 'MODEL EVALUATION' + formating.normal)
+    print('\n')
+    
+    #classification report
+    
+    print(formating.bold + formating.underline + 'Classification Report' + formating.normal)
+#     print('\n')
+    
+    y_hat = model.predict(X)
+    display(pd.DataFrame(metrics.classification_report(y,y_hat,output_dict=True)))
+    
+    
+    #Visual Separation
+    
+    print('\n')
+    print('--'*20)
+    print('\n')
+    
+    
+    #Visual Evaluation
+    
+    print(formating.bold + formating.underline + 'Visual Evaluation' + formating.normal)
+#     print('\n')
+    
+    fig,axes = plt.subplots(figsize = (7,7))
+#     axes = axes.flatten()
+    
+    metrics.plot_confusion_matrix(model,X,y,normalize = cm_normalize, cmap = cm_cmap,ax=axes)#, ax=axes[0])
+    axes.set_title('Confusion Matrix')
+    
+#     metrics.plot_roc_curve(model, X,y, ax=axes[1])
+#     axes[1].set_title('ROC Curve')
+#     axes[1].legend()
+#     axes[1].plot([0,1],[0,1], ls = ':')
+    
+    fig.tight_layout()
+#     plt.show()
+```
+
+5. Model Visuals
+
+```
+def model_visuals(model,X,y,X_test,y_test,num_cols,cat_cols,labels):
+    
+    '''Yellowbrick visual analysis of the model. Includes Class prediction error, feature correlation,
+    and Feature ranks
+    --------------------------------------
+    Input:
+    
+    model (sklearn model)
+    X (DataFrame or array): Training features data
+    y (series or array): Training Target
+    X_test (DataFrame or array): Testing features data
+    y_test (series or array): Testing Target
+    num_cols (array or list): numerical columns
+    cat_cols (array or list): categorical columns
+    labels (array or list): feature names
+    --------------------------------------
+    Output:
+    
+    Class prediction plot
+    feature correlation plots, with and without mutual information
+    feature ranks
+    '''
+    
+    #Class Prediction Error
+    
+    print('\n')
+    print(formating.bold+formating.underline+formating.green+'CLASS PREDICTION ERROR'+formating.normal+'\n')
+    class_prediction_error(model,X, y, X_test, y_test);
+    
+    print('\n')
+    print('--'*50)
+    print('\n')
+    
+    #Feature Correlation with target variable
+    
+    print(formating.bold+formating.underline+formating.green+'FEATURE CORRELATION WITH TARGET'+formating.normal+'\n')
+    
+    fig,axes = plt.subplots(ncols=2,figsize=(15,6))
+    
+    visualize = FeatureCorrelation(sort = True,ax = axes[0],labels = labels)
+    X_train_feature = preprocessing_trial(numerical,categorical).fit_transform(X)
+    visualize.fit(X_train_feature,y)
+    visualize.show();
+    
+    visualize2 = FeatureCorrelation(method='mutual_info-classification',sort = True,ax = axes[1],labels = labels)
+    X_train_feature = preprocessing_trial(num_cols,cat_cols).fit_transform(X)
+    visualize2.fit(X_train_feature,y)
+    visualize2.show();
+    
+    print('\n')
+    print('--'*50)
+    print('\n')
+    
+    #Rank Features 1d and 2d
+    
+    print(formating.bold+formating.underline+formating.green+'RANK FEATURES'+formating.normal+'\n')
+    
+    fig,axes = plt.subplots(ncols=2, figsize=(15,6))
+    rank1d(X_train_feature, ax=axes[0], show=False, features = cols_j)
+    rank2d(X_train_feature, ax=axes[1], show=False,features = cols_j)
+    plt.show();
+```
+
+6. Feature Importances
+
+```
+def feature_importances(model_classifier,preprocessed_X,y):
+    
+    '''Feature importances relative and actual
+    ----------------------------
+    Input:
+    
+    model_classifier (sklearn classifier)
+    preprocessed_X (Data_frame or array): Preprosessed training X
+    y (array, series): target variable
+    ----------------------------
+    Output:
+    
+    Relative and actual feature importances plots
+    -----------------------------
+    '''
+    
+    print(formating.bold+formating.underline+formating.green+'FEATURE IMPORTANCES'+formating.normal+'\n')
+    
+    try:
+        fig,ax=plt.subplots(figsize=(7,6))
+        viz = FeatureImportances(model_classifier,ax=ax)
+        viz.fit(preprocessed_X,y_train_model)
+        viz.show();
+        fig,ax1=plt.subplots(figsize=(7,6))
+        viz2 = FeatureImportances(model_classifier,relative=False,ax=ax1)
+        viz2.fit(preprocessed_X,y_train_model)
+        viz2.show();
+    except:
+        print('Feature Importances is not compatable with this classifier')
+```
+
+7. Explained Weights
+
+```
+def explained_weights(model_classifier,feature_names=cols_j,top=30):
+    
+    '''Table of explained weights of the model features
+    ---------------------------
+    Input:
+    
+    model_classifier (sklearn classifier)
+    feature_names (series, array, list): Feature names
+    top (int): total number of features to display
+    ---------------------------
+    Output:
+    
+    Table of feature weights color coded
+    ---------------------------'''
+    
+    return eli5.explain_weights(model_classifier,feature_names = feature_names,top = top)
+```
+
+8. model comparison on scores
+
+```
+def score_compare(models, X_test, y_test, parameters,parameter_name, target_variable,
+                  classification_score = 'f1-score', palette='mako'):
+    
+    '''Compares and plots the average score of the models
+    ------------------------------------
+    Inputs:
+    
+    models (sklearn model): models that are to be compared
+    X_test (DataFrame or array): Test features data
+    y_test (array or series): target test data
+    parameters (list or array): parameters on the basis of which comparison is made
+    parameter_name (str): name of the parameters on the basis of which comparison is made. This is
+    used to name the column.
+    target_variable (str)
+    classification_score (str): score on which comparison is performed
+    pallette (str or seaborn color pallette): plot color pallette
+    ------------------------------------
+    Output:
+    
+    bar plot comparing these scores
+    ------------------------------------'''
+    
+    #Dictionary of all scores
+    
+    scores = {}
+    for i in range(len(parameters)):
+        y_hat = models[i].predict(X_test)
+        report = pd.DataFrame(metrics.classification_report(y_test,y_hat,output_dict=True))
+        scores[parameters[i]]=report.loc[classification_score]
+    
+    #table
+    
+    f1_table = pd.DataFrame(scores).reset_index()
+    f1_table = f1_table.rename(columns = {'index':target_variable})
+    f1_table_formation = f1_table.loc[:(len(f1_table)-4)]
+    
+    table = pd.melt(f1_table_formation, id_vars=[target_variable],
+                    value_name=classification_score, var_name = parameter_name)
+    
+    #plot
+    
+    fig,axes = plt.subplots(figsize = (10,6))
+    sns.barplot(target_variable, classification_score, hue = parameter_name, data = table, palette=palette, ax=axes);
+    axes.set_title('Individual Analysis')
+```
+
+9. F1 score comparison
+
+```
+def f1_compare(models, X_test, y_test, parameters,average='macro'):
+    
+    '''Compares average f1 score of the models
+    ------------------------------------
+    Inputs:
+    
+    models (sklearn model): models that are to be compared
+    X_test (DataFrame or array): Test features data
+    y_test (array or series): target test data
+    parameters (list or array): parameters on the basis of which comparison is made
+    pallette (str or seaborn color pallette): plot color pallette
+    ------------------------------------
+    Output:
+    
+    dictionary of the avg score for each model
+    ------------------------------------'''
+    
+    print('\n'+formating.underline+f'Average f1_score'+'\n')
+    
+    f1_macro = {}
+    for i in range(len(parameters)):
+        y_hat_ = models[i].predict(X_test)
+        f1 = round(metrics.f1_score(y_test,y_hat_,average=average),5)
+        f1_macro[parameters[i]]=f1
+    
+    return f1_macro
+```
+
+
+## Data Splitting and Preprocessing
+
+
+### Data Splitting
+
+Most of the supervised learning models rely on and learn from the given target variables. Therefore, it becomes paramount to seperate out and keep aside a part of data that you could test to analyse the model performance. The train-test split was performed using he default 80-20 split.
+
+Further, since we are analysing multiple models, using test data multiple times could aslo risk bias since the data would already be exposed during the execution. So, it is wise to keep our test data aside and further split-our training data into two. The train-validation split was also performed using the default 80-20 split.
+
+Once the split has been performed, we test for any imblance. The image below shows the class imbalance before the split, and after. Since we have similar proportions, we are good to proceed.
+
+**Class Imbalance before the split**
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/CI_values_before.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/CI_before.png'>
+
+**Class Imbalance after the split**
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/CI_values_after.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/CI_after.png'>
+
+
+### Data Preprocessing
+
+The property of a rock formation is such that they are layered. Which means, that with relation to depth, the log values would be similar to the neighboring data points since logs determine the rock/formation properties. For this reason, all missing values are set to be filled using K-Nearest Neighbors weighed on distance.
+
+Further, since most of our data is partially skewed, the numerical data is scaled on the basis of the column's medians using Scikit Learn's `RhobustScaler()`. Power and Quantile Transformers are also explored. Scaling is performed to be able to determine the relative relation with the target variable and make the interpretation easier.
+
+To make the workflow more efficient, pipelines were created to be used for all preprocessing:
+
+```
+cat_transformer = Pipeline(steps=[('impute', KNNImputer(weights='distance')),
+                                  ('ohe', OneHotEncoder(sparse=False, drop='first',handle_unknown='ignore'))])
+
+num_transformer = Pipeline(steps=[('impute', KNNImputer(weights='distance')),
+                                  ('scaler', RobustScaler())])
+
+preprocessing = ColumnTransformer(transformers=[('num', num_transformer,numerical),
+                                                ('cat', cat_transformer,categorical)])
+```
+
+A final pipeline is created and built in a function to incorporate the entire modeling process in one line of code:
+
+```
+def model_pipeline(model,preprocessor):
+    
+    '''Returns a model object for a given estimator and preprocessor
+    ------------------------------------------
+    Inputs:
+    
+    model (sklearn classifier class)
+    preprocessor (pipeline or class): sklearn preprocessing class or pipeline
+    ------------------------------------------
+    
+    Outputs:
+    
+    sklearn modelling pipeline
+    -------------------------------------------'''
+    
+    model = Pipeline(steps = [('preprocessor', preprocessor),
+                              ('model', model)])
+    return model
+```
+
+## Comparing the Different Models
+
+### KNN Model
+
+Since the nature of the dataset is such that most of the immediate data points in depth have the same characteristics, except on the boundaries, our best first approach could be using the KNN model. Scikit Learn's `KNeighbourClassifier()` was used for the purpose. The best KNN model was seleced using gridsearch on parameters `n_neighbours` and `weight`. The f1-macro-average score was 0.82.
+
+Looking at the individual errors, Facies 1, 5 and 9 seem to perform well with less errors (low false negatives) Facies 2 seem so show some errors while separating from 3 since both these facies share some similar properties. Similarly, 6 and 8 seem to show some mix ups. Facies 4 seem to have a few false negatives belonging to 6 and 8. A possible explaination of this relies on the size of the grains of these formations. Some of the logs determine porosity of the formation which depends largly on brain size and volumes. 
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_error.png'>
+
+Feature correlation using KNN show that Marine-Non-Marine, PE log values, one of the formations, resistivity log, and depth have high positive influence on the classification inthat respective order, while Gamma ray values, N-D porosity, Delta N-D negatively influence the classification.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/feature_corr_KNN.png'>
+
+Shapiro feature ranking shows the importance of these features to lie in the line of Resistivity N-D Porosity having the greatest influence regardless of the direction, followed by depth, GR, PE, and Relative position.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_shapiro.png'>
+
+### Decision Tree Classifier
+
+Next we explore Desision Tree Classification using scikit Learn's DecisionTreeClassifier() with a gridsearch on parameters `crierion`, `min_samples_leaf`, and `class_weights`. The final decision tree model also took into consideration scaling or transforming method on the numerical data. The f1-macro-average score was 0.73.
+
+The results of this model showed similar trends in individual errors but larger in value than the KNN Model.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/DT_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/DT_error.png'>
+
+Feature correlation and and shapiro ranking proved to be exactly the same as KNN Model.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/feature_corr_DT.png'>
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/DT_shapiro.png'>
+
+eli15's explained weights show a slightly different feaure ranking in a way that the heighest influenceer was Marine-Non-Marine, followed by Depth, resistivity, relative position, PE and GR.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/eli5_DT.png'>
+
+Scikit Learn's feature importances show the same results. Based on this, we would go forward and use these results for feature ranking and importances.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/DT_importances.png'>
+
+### Random Forest Classifier
+
+The results from the scikit Learn's RandomForestClassifier() show a similar trend in errors as KNN and Decision tree, however it shows an improvement from the Desision tree classifier. The f1-macro-average score was 0.81
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/RF_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/RF_error.png'>
+
+While the explained weights, and shapiro ranking show the same ranks in features, the the result of feature importances slightly changed to Marine-Non Marine still being on the top followed by PE, GR, Depth, Rsisitivity, N-D porosity, Delta N-D, and relative porosity.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/feature_corr_RF.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/eli5_RF.png'>
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/RF_shapiro.png'>
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/RF_importances.png'>
+
+
+### SVM
+
+Since SVM also uses distances in their calculation, this might give better results as well. The f1-macro-average score was 0.75
+
+While other classes do relatively well, 2, 8, and 6 do not perform that well.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SVM_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SVM_error.png'>
+
+Feature correlation and shapiro importances remain the same.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/feature_corr_SVM.png'>
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SVM_shapiro.png'>
+
+### Stacking Classifier
+
+The final classifier used was the stacking classifier which would take the predictions of all the models above and predict accordingly. The f1-macro-average score was 0.82.
+
+The individual errors were moderate, with more errors in class 3 and 6.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SC_error.png'>
+
+
+## Final Model and Test Results
+
+Based on the f1-macro-average, Knn performs heighest with 0.82 score followed by Stacking classifier 0.81.
+
+Test data was fit in these models and both performed at an f1score of 0.85.
+
+The KNn Model performs fairly on layers 2,3,6,8 with f1 scores of 0.83, 0.86, 0.83,0.75.
+
+img: <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_test_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_test_error.png'>
+
+The Stacking classifier model performs well with 2, moderately for 3 and fairly on 6 and 8 with scores of 0.88, 0.91, 0.79, and 0.82 respectively.
+
+img: <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SC_test_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SC_test_error.png'>
+
+Therefore, our Final model selected was the **Stacking Classifier**. The time taken to execute this model on test data with 808 data points was about 11 secs!
+
+
+## Feature Ranking and Importances
+
+Random Forest classifier results were used for feature importances and ranking. Please refer to the Random Forest classifier results and analysis.
+
+The plots below show a relation between these features and the facies classification.
+
+Marine non Marine plot show that each classification accurately corresponds to fixed facies in the mix.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/NM_M-relation.png'>
+
+The plot below shows the trends for each log plot corresponding to a particular facies.
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/logs.png'>
+
+<img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/img_closeup.png'>
+
+
+## Conclusion and Recommendations
+
+- The best model took about 11 secs to classify the data into separate facies with aa f-1 score of. 
+
+- Using a Machine learning model can thus prove to be a very efficient and speedy method for facies classification as compared to the combursome manual techniques currently used which may take days to generate the results.
+
+- The most important features that determine the accurate classification include the property of being marine or non-marine, and the log values generated from PE, GR, N-D logs, Resistivity and relative position along with depth. These show great influence since each of these values are unique to certain properties which define a facies.
+
+- It is paramount, therefore, that these operations and data preprocessing is conducted meticulously before feeding in the data into the machine learning model.
+
+
+## Future Work
+
+Future work will include but not limited to:
+
+- Further improving the model to include other methods of distance calculation since distance is proved to be a major factor in the results.
+
+- Analyse the effect of class imbalance to further improve our model.
+
+- Expand and test this model for wells at different geological locations with other facies present to make this model applicable globally
+
+- Use these predictions as a feature in machine learning models to predict the main goal of facies classification.
