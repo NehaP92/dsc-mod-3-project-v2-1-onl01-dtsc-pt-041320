@@ -248,15 +248,25 @@ def model_visuals(model,X,y,X_test,y_test,num_cols,cat_cols,labels):
     
     fig,axes = plt.subplots(ncols=2,figsize=(15,6))
     
-    visualize = FeatureCorrelation(sort = True,ax = axes[0],labels = labels)
-    X_train_feature = preprocessing_trial(numerical,categorical).fit_transform(X)
-    visualize.fit(X_train_feature,y)
-    visualize.show();
+    try:
+        visualize = FeatureCorrelation(sort = True,ax = axes[0],labels = labels)
+        X_train_feature = preprocessing_trial(numerical,categorical).fit_transform(X)
+        visualize.fit(X_train_feature,y)
+        visualize.show();
+
+        visualize2 = FeatureCorrelation(method='mutual_info-classification',sort = True,ax = axes[1],labels = labels)
+        X_train_feature = preprocessing_trial(num_cols,cat_cols).fit_transform(X)
+        visualize2.fit(X_train_feature,y)
+        visualize2.show();
     
-    visualize2 = FeatureCorrelation(method='mutual_info-classification',sort = True,ax = axes[1],labels = labels)
-    X_train_feature = preprocessing_trial(num_cols,cat_cols).fit_transform(X)
-    visualize2.fit(X_train_feature,y)
-    visualize2.show();
+    except:
+        visualize = FeatureCorrelation(sort = True,ax = axes[0],labels = labels)
+        visualize.fit(X,y)
+        visualize.show();
+
+        visualize2 = FeatureCorrelation(method='mutual_info-classification',sort = True,ax = axes[1],labels = labels)
+        visualize2.fit(X,y)
+        visualize2.show();
     
     print('\n')
     print('--'*50)
@@ -267,9 +277,16 @@ def model_visuals(model,X,y,X_test,y_test,num_cols,cat_cols,labels):
     print(formating.bold+formating.underline+formating.green+'RANK FEATURES'+formating.normal+'\n')
     
     fig,axes = plt.subplots(ncols=2, figsize=(15,6))
-    rank1d(X_train_feature, ax=axes[0], show=False, features = cols_j)
-    rank2d(X_train_feature, ax=axes[1], show=False,features = cols_j)
-    plt.show();
+    
+    try:
+        rank1d(X_train_feature, ax=axes[0], show=False, features = cols_j)
+        rank2d(X_train_feature, ax=axes[1], show=False,features = cols_j)
+        plt.show();
+        
+    except:
+        rank1d(X, ax=axes[0], show=False, features = cols_j)
+        rank2d(X, ax=axes[1], show=False,features = cols_j)
+        plt.show();
 ```
 
 6. Feature Importances
@@ -562,7 +579,7 @@ The Stacking classifier model performs well with 2, moderately for 3 and fairly 
 
 img: <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SC_test_matrix.png'> <img src='https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/SC_test_error.png'>
 
-Therefore, our Final model selected was the **Stacking Classifier**. The time taken to execute this model on test data with 808 data points was about 11 secs!
+Therefore, our Final model selected was the **Stacking Classifier**. The time taken to execute this model on test data with 808 data points was about 9.7 secs!
 
 
 ## Feature Ranking and Importances
@@ -584,7 +601,7 @@ The plot below shows the trends for each log plot corresponding to a particular 
 
 ## Conclusion and Recommendations
 
-- The best model took about 11 secs to classify the data into separate facies with aa f-1 score of. 
+- The best model took about 9,7 secs to classify the data into separate facies with aa f-1 score of. 
 
 - Using a Machine learning model can thus prove to be a very efficient and speedy method for facies classification as compared to the combursome manual techniques currently used which may take days to generate the results.
 
@@ -600,6 +617,8 @@ Future work will include but not limited to:
 - Further improving the model to include other methods of distance calculation since distance is proved to be a major factor in the results.
 
 - Analyse the effect of class imbalance to further improve our model.
+
+- Incorporate depth missmatch and tail removal during preprocessing since it is time consuming.
 
 - Expand and test this model for wells at different geological locations with other facies present to make this model applicable globally
 
