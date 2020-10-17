@@ -601,13 +601,14 @@ The plot below shows the trends for each log plot corresponding to a particular 
 
 ## Conclusion and Recommendations
 
-- The best model took about 9,7 secs to classify the data into separate facies with aa f-1 score of. 
+- The best model took 9.7 SECS to classify the data into separate facies with F-1 SCORE of  0.86. 
 
-- Using a Machine learning model can thus prove to be a very efficient and speedy method for facies classification as compared to the combursome manual techniques currently used which may take days to generate the results.
+- Machine learning model is a very EFFICIENT and SPEEDY tool for facies classification compared to the cumbersome manual techniques currently used which take days to generate the results. It is therefore RECOMMENDED TO UTILIZE MACHINE LEARNING MODELS FOR FACIES CLASSIFICATION
 
-- The most important features that determine the accurate classification include the property of being marine or non-marine, and the log values generated from PE, GR, N-D logs, Resistivity and relative position along with depth. These show great influence since each of these values are unique to certain properties which define a facies.
+- The most important features that determine the accurate classification include the property of being MARINE or NON-MARINE, and the log values generated from PE, GR, N-D LOGS, RESISTIVITY and RELATIVE POSITION along with DEPTH. These show great influence since each of these values are unique to certain properties which define a facies.
 
-- It is paramount, therefore, that these operations and data preprocessing is conducted meticulously before feeding in the data into the machine learning model.
+- LOGGING OPERATIONS and DATA PREPROCESSING should be done very METICULOUSLY for best Machine learning results.
+
 
 
 ## Future Work
